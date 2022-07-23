@@ -1,0 +1,128 @@
+/*Main*/
+
+.content main {
+  background-color: #fff9ac;
+  min-height: 100vh;
+
+  div.h_blank {
+    height: 120px;
+  }
+
+  .container {
+    width: 90%;
+    min-width: 300px;
+    margin: 50px auto;
+
+    // カテゴリのフォルダ階層表示
+    .cat_dir {
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: #fff;
+
+      a {
+        color: #5f5f5f;
+
+        &.cat_root::before {
+          content: "\e2c8";
+          font-family: 'Material Icons Outlined';
+          display: inline-block;
+          transform: translateY(2px);
+          z-index: 1000;
+        }
+      }
+    }
+
+    div.main {
+      padding: 50px 30px;
+      background-color: #fff;
+      margin: 20px auto;
+      border-radius: 10px;
+      display: flex;
+
+      .article {
+        width: calc(70% - 1px);
+        min-width: 500px;
+        margin: 10px 10px;
+        font-size: 16px;
+        display: inline-block;
+
+        span.art-title {
+          font-size: 32px;
+          background: linear-gradient(transparent, transparent, #70ffec);
+          display: block;
+          overflow-wrap: break-word;
+        }
+
+        // サムネイル画像
+        .art-thumb {
+          width: 100%;
+          margin-top: 40px;
+          display: block;
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+        // サムネイル画像の情報(引用元)
+        .art-thumb-info {
+          display: block;
+          float: right;
+          font-size: small;
+          color: #666666;
+          // リンクの装飾
+          a {
+            display: block;
+            float: right;
+            font-size: small;
+            color: #666666;
+          }
+        }
+        // 記事の詳細情報
+        div.art-info {
+          margin: 20px 20px;
+          color: #3f3f3f;
+          font-size: 0;
+          // タグ一覧
+          .tags {
+            display: inline-block;
+            max-width: fit-content;
+            width: calc(100% - 120px);
+            font-size: 16px;
+            // タグ一つ一つ
+            .tag {
+              display: inline-block;
+              color: #414141;
+              margin-right: 10px;
+
+              &::before {
+                content: "\e54e";
+                font-family: 'Material Icons Outlined';
+                display: inline-block;
+                font-size: 20px;
+                transform: translateY(3px);
+              }
+            }
+          }
+          // 記事の更新日
+          .update {
+            width: 120px;
+            vertical-align: top;
+            display: inline-block;
+            font-size: 16px;
+            &::before {
+              content: "\e923";
+              font-family: "Material Icons Outlined";
+              display: inline-block;
+              transform: translateY(2px);
+              font-size: 120%;
+              vertical-align: top;
+            }
+          }
+        }
+        div.art-cont {
+
+        }
+      }
+    }
+  }
+}

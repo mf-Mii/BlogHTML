@@ -1,97 +1,103 @@
-
+@charset "UTF-8";
 /*右バー*/
-.content main .container div.main .right-bar{
-    font-size: 16px;
-    width: 30%;
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    background-color: #e9e9e9;
-    border-radius: 5px;
+.content main .container div.main .right-bar {
+  font-size: 16px;
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background-color: #e9e9e9;
+  border-radius: 5px;
 }
-.content main .container div.main .right-bar .search{
-    width: 80%;
-    margin: auto;
-    padding: 15px 0px;
-    border-bottom: 1px solid #3d3d3d;
+.content main .container div.main .right-bar .search {
+  width: 80%;
+  margin: auto;
+  padding: 15px 0px;
+  border-bottom: 1px solid #3d3d3d;
 }
-.content main .container div.main .right-bar .search form input#query{
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 17px;
-    margin: 20px auto;
-    border: 1px solid #717171;
+.content main .container div.main .right-bar .search form input#rb_squery {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 17px;
+  margin: 20px auto;
+  border: 1px solid #717171;
+  width: 100%;
+  outline: none;
+  transition: 0.3s;
 }
-.content main .container div.main .right-bar .search form input[type="search"]:focus{
-    border: 1px solid #565656;
+.content main .container div.main .right-bar .search form input#rb_squery:focus {
+  border: 1px solid #333333;
+  box-shadow: 0 0 10px rgba(136, 136, 136, 0.4666666667);
 }
-.content main .container div.main .right-bar .search form input[type="submit"]{
-    color: #242424;
-    font-size: 18px;
-    margin-left: 20px;
-    background: none;
-    border: none;
-    text-decoration: underline;
-    transition-duration: 300ms;
+.content main .container div.main .right-bar .search form input[type=submit] {
+  color: #242424;
+  font-size: 18px;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  transition-duration: 300ms;
+  cursor: pointer;
 }
-.content main .container div.main .right-bar .search form input[type="submit"]:hover{
-    color: #696969;
+.content main .container div.main .right-bar .search form input[type=submit]:hover {
+  color: #696969;
+}
+.content main .container div.main .right-bar .ad-space-square {
+  width: 90%;
+  margin: auto;
+  min-height: 100px;
+  text-align: center;
+  border-bottom: 1px solid #3d3d3d;
+}
+.content main .container div.main .right-bar .articles {
+  border-bottom: 1px solid #3d3d3d;
+  width: 90%;
+  margin: auto;
+}
+.content main .container div.main .right-bar .articles article.list {
+  width: 100%;
+}
+.content main .container div.main .right-bar .articles article.list span.list-title {
+  display: block;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.content main .container div.main .right-bar .articles article.list article:not(article.list) {
+  min-height: 100px;
+  width: 100%;
+  text-align: left;
+  font-size: 0;
+  transition-duration: 300ms;
+}
+.content main .container div.main .right-bar .articles article.list article:not(article.list) img.al-thumb {
+  width: 40%;
+  display: inline-block;
+}
+.content main .container div.main .right-bar .articles article.list article:not(article.list) span.al-title {
+  display: inline-block;
+  width: 60%;
+  font-size: 18px;
+  vertical-align: top;
+  color: #0c0c0c;
+}
+.content main .container div.main .right-bar .articles article.list article:not(article.list):hover {
+  filter: brightness(1.1);
+}
+.content main .container div.main .right-bar .articles article.list article:not(article.list):hover + span.al-title {
+  color: #858585;
+}
+.content main .container div.main .right-bar .articles.new-articles article.list span.list-title::before {
+  content: "\e031";
+  font-family: "Material Icons Outlined";
+  display: inline-block;
+  transform: translateY(3px);
+}
+.content main .container div.main .right-bar .articles.ranking-articles article.list span.list-title::before {
+  content: "\e8e5";
+  font-family: "Material Icons Outlined";
+  display: inline-block;
+  transform: translateY(3px);
 }
 
-.content main .container div.main .right-bar .ad-space-square{
-    width: 90%;
-    margin: auto;
-    min-height: 100px;
-    text-align: center;
-    border-bottom: 1px solid #3d3d3d;
-}
-.content main .container div.main .right-bar .articles{
-    border-bottom: 1px solid #3d3d3d;
-    width: 90%;
-    margin: auto;
-}
-.content main .container div.main .right-bar .articles article.list{
-    width: 100%;
-}
-.content main .container div.main .right-bar .articles article.list span.list-title{
-    display: block;
-    text-align: left;
-    font-size: 20px;
-    margin-top: 10px;
-}
-.content main .container div.main .right-bar .articles article.list article:not(article.list){
-    min-height: 100px;
-    width: 100%;
-    text-align: left;
-    font-size: 0;
-    transition-duration: 300ms;
-}
-.content main .container div.main .right-bar .articles article.list article:not(article.list) img.al-thumb{
-    width: 40%;
-    display: inline-block;
-}
-.content main .container div.main .right-bar .articles article.list article:not(article.list) span.al-title{
-    display: inline-block;
-    width: 60%;
-    font-size: 18px;
-    vertical-align: top;
-    color: #0c0c0c;
-}
-.content main .container div.main .right-bar .articles article.list article:not(article.list):hover{
-    filter: brightness(1.1);
-}
-.content main .container div.main .right-bar .articles article.list article:not(article.list):hover + span.al-title{
-    color: #858585;
-}
-.content main .container div.main .right-bar .articles.new-articles article.list span.list-title::before{
-    content: "\e031";
-    font-family: 'Material Icons Outlined';
-    display: inline-block;
-    transform: translateY(3px);
-}
-.content main .container div.main .right-bar .articles.ranking-articles article.list span.list-title::before{
-    content: "\e8e5";
-    font-family: 'Material Icons Outlined';
-    display: inline-block;
-    transform: translateY(3px);
-}
+/*# sourceMappingURL=right-bar.css.map */

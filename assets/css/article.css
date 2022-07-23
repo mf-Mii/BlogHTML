@@ -1,101 +1,108 @@
 /*Main*/
-.content main{
-    background-color: #fff9ac;
-    min-height: 100vh;
+.content main {
+  background-color: #fff9ac;
+  min-height: 100vh;
 }
-.content main div.h_blank{
-    height: 120px;
+.content main div.h_blank {
+  height: 120px;
 }
-.content main .container{
-    width: 90%;
-    min-width: 300px;
-    margin: 50px auto;
+.content main .container {
+  width: 90%;
+  min-width: 300px;
+  margin: 50px auto;
 }
-.content main .container .cat_dir{
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: #fff;
+.content main .container .cat_dir {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #fff;
 }
-.content main .container .cat_dir a{
-    color: #5f5f5f;
+.content main .container .cat_dir a {
+  color: #5f5f5f;
 }
-.content main .container .cat_dir a.cat_root::before{
-    content: "\e2c8";
-    font-family: 'Material Icons Outlined';
-    display: inline-block;
-    transform: translateY(2px);
-    z-index: 1000;
+.content main .container .cat_dir a.cat_root::before {
+  content: "\e2c8";
+  font-family: "Material Icons Outlined";
+  display: inline-block;
+  transform: translateY(2px);
+  z-index: 1000;
+}
+.content main .container div.main {
+  padding: 50px 30px;
+  background-color: #fff;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: flex;
+}
+.content main .container div.main .article {
+  width: calc(70% - 1px);
+  min-width: 500px;
+  margin: 10px 10px;
+  font-size: 16px;
+  display: inline-block;
+}
+.content main .container div.main .article span.art-title {
+  font-size: 32px;
+  background: linear-gradient(transparent, transparent, #70ffec);
+  display: block;
+  overflow-wrap: break-word;
+}
+.content main .container div.main .article .art-thumb {
+  width: 100%;
+  margin-top: 40px;
+  display: block;
+}
+.content main .container div.main .article .art-thumb img {
+  display: block;
+  width: 100%;
+}
+.content main .container div.main .article .art-thumb-info {
+  display: block;
+  float: right;
+  font-size: small;
+  color: #666666;
+}
+.content main .container div.main .article .art-thumb-info a {
+  display: block;
+  float: right;
+  font-size: small;
+  color: #666666;
+}
+.content main .container div.main .article div.art-info {
+  margin: 20px 20px;
+  color: #3f3f3f;
+  font-size: 0;
+}
+.content main .container div.main .article div.art-info .tags {
+  display: inline-block;
+  max-width: fit-content;
+  width: calc(100% - 120px);
+  font-size: 16px;
+}
+.content main .container div.main .article div.art-info .tags .tag {
+  display: inline-block;
+  color: #414141;
+  margin-right: 10px;
+}
+.content main .container div.main .article div.art-info .tags .tag::before {
+  content: "\e54e";
+  font-family: "Material Icons Outlined";
+  display: inline-block;
+  font-size: 20px;
+  transform: translateY(3px);
+}
+.content main .container div.main .article div.art-info .update {
+  width: 120px;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 16px;
+}
+.content main .container div.main .article div.art-info .update::before {
+  content: "\e923";
+  font-family: "Material Icons Outlined";
+  display: inline-block;
+  transform: translateY(2px);
+  font-size: 120%;
+  vertical-align: top;
 }
 
-.content main .container div.main{
-    padding: 50px 30px;
-    background-color: #fff;
-    margin: 20px auto;
-    border-radius: 10px;
-    font-size: 0px;
-}
-
-.content main .container div.main .article{
-    width: calc(70% - 1px);
-    min-width: 500px;
-    font-size: 16px;
-    display: inline-block;
-}
-.content main .container div.main .article span.art-title{
-    font-size: 32px;
-    background: linear-gradient(transparent, transparent, #70ffec);
-    display: block;
-    overflow-wrap: break-word;
-}
-.content main .container div.main .article .art-thumb{
-    width: 100%;
-    margin-top: 40px;
-    display: block;
-}
-.content main .container div.main .article img{
-    display: block;
-    width: 100%;
-}
-.content main .container div.main .article .art-thumb-info,.content main .container div.main .article .art-thumb-info a{
-    display: block;
-    float: right;
-    font-size: small;
-    color: #666666;
-}
-.content main .container div.main .article div.art-info{
-    margin: 20px 20px;
-    color: #3f3f3f;
-    font-size: 0;
-}
-.content main .container div.main .article div.art-info .tags{
-    display: inline-block;
-    max-width: fit-content;
-    width: calc(100% - 120px);
-    font-size: 16px;
-}
-.content main .container div.main .article div.art-info .tag{
-    display: inline-block;
-    color: #414141;
-    margin-right: 10px;
-}
-.content main .container div.main .article div.art-info .tag::before{
-    content: "\e54e";
-    font-family: 'Material Icons Outlined';
-    display: inline-block;
-    font-size: 20px;
-    transform: translateY(3px);
-}
-.content main .container div.main .article div.art-info .update{
-    width: 120px;
-    vertical-align: top;
-    display: inline-block;
-    font-size: 16px;
-}
-.content main .container div.main .article div.art-info .update::before{
-    content: "\e923";
-    font-family: "Material Icons Outlined";
-    display: inline-block;
-    transform: translateY(2px);
-    font-size: 120%;
-    vertical-align: top;
-}
+/*# sourceMappingURL=article.css.map */

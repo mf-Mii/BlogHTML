@@ -1,0 +1,70 @@
+/*Default*/
+span.br{
+  display: inline-block;
+}
+
+
+
+
+
+.content{
+  width: 100%;
+  // ヘッダ
+  header {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    box-shadow: 0 0 20px rgb(90, 90, 90);
+    background-color: #fff;
+    z-index: 5000;
+    .logo {
+      display: block;
+      height: 50px;
+      text-align: center;
+      background-size: contain;
+      background: url("/assets/img/logo.png") no-repeat center;
+    }
+    nav{
+      height: 70px;
+      display: block;
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      li{
+        line-height: 70px;
+        height: 70px;
+        display: inline-block;
+        a{
+          line-height: 50px;
+          height: 50px;
+          display: inline-block;
+          padding: 0px 20px;
+          color: #242424;
+          background: none;
+          font-size: 20px;
+          text-decoration: transparent;
+          transition-duration: 300ms;
+          vertical-align: middle;
+          &:hover{
+            // transform: scale(1.1);
+            background: #acacac;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    span.copyright {
+      font-size: 13px;
+    }
+  }
+}
