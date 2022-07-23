@@ -4,7 +4,7 @@ span.br{
 }
 
 
-
+$SP_WIDTH: 512px;
 
 
 .content{
@@ -78,11 +78,12 @@ span.br{
       line-height: 16px;
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: center;
       li {
         border-bottom: 1px solid #414141;
-        margin: 0 10px;
+        margin: 5px 10px;
         a {
           color: #3f3f3f;
           text-decoration: none;

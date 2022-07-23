@@ -8,9 +8,14 @@
 }
 .content main .container {
   width: 90%;
-  min-width: 300px;
+  min-width: 240px;
   margin: 50px auto 0 auto;
   padding-bottom: 50px;
+}
+@media screen and (max-width: 512px) {
+  .content main .container {
+    width: 96%;
+  }
 }
 .content main .container .cat_dir {
   padding: 10px 20px;
@@ -33,19 +38,30 @@
   margin: 20px auto;
   border-radius: 10px;
   display: flex;
+  width: calc(100% - 60px);
+}
+@media screen and (max-width: 512px) {
+  .content main .container div.main {
+    flex-wrap: wrap;
+  }
 }
 .content main .container div.main .article {
   width: calc(70% - 1px);
-  min-width: 500px;
   margin: 10px 10px;
   font-size: 16px;
-  display: inline-block;
+  order: 1;
+}
+@media screen and (max-width: 512px) {
+  .content main .container div.main .article {
+    width: 100%;
+    order: 2;
+  }
 }
 .content main .container div.main .article span.art-title {
   font-size: 32px;
   background: linear-gradient(transparent, transparent, #70ffec);
   display: block;
-  overflow-wrap: break-word;
+  overflow-x: clip;
 }
 .content main .container div.main .article .art-thumb {
   width: 100%;
@@ -72,12 +88,26 @@
   margin: 20px 20px;
   color: #3f3f3f;
   font-size: 0;
+  display: flex;
+}
+@media screen and (max-width: 512px) {
+  .content main .container div.main .article div.art-info {
+    flex-flow: column;
+    margin: 20px 0;
+  }
 }
 .content main .container div.main .article div.art-info .tags {
-  display: inline-block;
   max-width: fit-content;
   width: calc(100% - 120px);
   font-size: 16px;
+  order: 1;
+}
+@media screen and (max-width: 512px) {
+  .content main .container div.main .article div.art-info .tags {
+    display: block;
+    width: 100%;
+    order: 2;
+  }
 }
 .content main .container div.main .article div.art-info .tags .tag {
   display: inline-block;
@@ -96,6 +126,15 @@
   vertical-align: top;
   display: inline-block;
   font-size: 16px;
+  order: 2;
+}
+@media screen and (max-width: 512px) {
+  .content main .container div.main .article div.art-info .update {
+    display: block;
+    width: 100%;
+    float: left;
+    order: 1;
+  }
 }
 .content main .container div.main .article div.art-info .update::before {
   content: "\e923";

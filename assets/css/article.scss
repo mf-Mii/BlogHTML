@@ -1,5 +1,6 @@
 /*Main*/
-
+// 設定
+$SP_WIDTH: 512px;
 .content main {
   background-color: #fff9ac;
   min-height: 100vh;
@@ -10,9 +11,12 @@
 
   .container {
     width: 90%;
-    min-width: 300px;
+    min-width: 240px;
     margin: 50px auto 0 auto;
     padding-bottom: 50px;
+    @media screen and (max-width: $SP_WIDTH) {
+      width: 96%;
+    }
 
     // カテゴリのフォルダ階層表示
     .cat_dir {
@@ -39,19 +43,27 @@
       margin: 20px auto;
       border-radius: 10px;
       display: flex;
+      width: calc(100% - 60px);
+      @media screen and (max-width: $SP_WIDTH){
+          flex-wrap: wrap;
+      }
 
       .article {
         width: calc(70% - 1px);
-        min-width: 500px;
         margin: 10px 10px;
         font-size: 16px;
-        display: inline-block;
+        order: 1;
+        @media screen and (max-width: $SP_WIDTH) {
+          width: 100%;
+          order: 2;
+        }
+
 
         span.art-title {
           font-size: 32px;
           background: linear-gradient(transparent, transparent, #70ffec);
           display: block;
-          overflow-wrap: break-word;
+          overflow-x: clip;
         }
 
         // サムネイル画像
@@ -83,12 +95,22 @@
           margin: 20px 20px;
           color: #3f3f3f;
           font-size: 0;
+          display: flex;
+          @media screen and (max-width: $SP_WIDTH){
+            flex-flow: column;
+            margin: 20px 0;
+          }
           // タグ一覧
           .tags {
-            display: inline-block;
             max-width: fit-content;
             width: calc(100% - 120px);
             font-size: 16px;
+            order: 1;
+            @media screen and (max-width: $SP_WIDTH) {
+              display: block;
+              width: 100%;
+              order: 2;
+            }
             // タグ一つ一つ
             .tag {
               display: inline-block;
@@ -110,6 +132,13 @@
             vertical-align: top;
             display: inline-block;
             font-size: 16px;
+            order: 2;
+            @media screen and (max-width: $SP_WIDTH) {
+              display: block;
+              width: 100%;
+              float: left;
+              order: 1;
+            }
             &::before {
               content: "\e923";
               font-family: "Material Icons Outlined";

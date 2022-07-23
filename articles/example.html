@@ -8,9 +8,11 @@
     <!--SEO-->
 
     <!--Script&CSS-->
+    <!-- External -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.18/marked.min.js" integrity="sha512-6MhVG3FdJSogKdAFmdGWvJ/QCBTPhs0dd3ad89H+ZVGJ721bOo2CTlaiG4Ov6l422KGQStYrfOD4HASBvO6sZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <!-- Local -->
     <style>
         body {
             margin: 0;
@@ -22,6 +24,7 @@
     <link rel="stylesheet" href="/assets/css/common.css">
     <link rel="stylesheet" href="/assets/css/right-bar.css">
     <link rel="stylesheet" href="/assets/css/article.css">
+    <script src="/assets/js/common.js"></script>
 </head>
 <body>
     <div class="loading">
@@ -45,13 +48,30 @@
                 </div>
                 <div class="main">
                     <div class="article">
-                        <span class="art-title">【初めてのブログ】HelloWorld!!</span>
+                        <span class="art-title">
+                            <!-- #EDIT:TITLE -->
+                            <span class="br">【初めてのブログ】</span>
+                            HelloWorld!!
+                        </span>
                         <div class="art-thumb">
                             <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="">
                             <span class="art-thumb-info">From:&nbsp;<a href="https://piapro.jp/t/iVDd" target="_blank">piapro</a></span>
                         </div>
                         <div class="art-info">
-                            <div class="tags"><a href="/tags/html" class="tag">HTML</a><span class="tag">AAAAAAABBBBBBBCCCCCCC</span><span class="tag">AAAAAAABBBBBBBCCCCCCC</span><span class="tag">AAAAAAABBBBBBBCCCCCCC</span></div>
+                            <div class="tags">
+                                <a href="/tags/html" class="tag">
+                                    HTML
+                                </a>
+                                <span class="tag">
+                                    ShortyTag
+                                </span>
+                                <span class="tag">
+                                    LONGLONGLONG----TAG
+                                </span>
+                                <span class="tag">
+                                    AAAAAAABBBBBBBCCCCCCC
+                                </span>
+                            </div>
                             <div class="update">2021/10/10</div>
                         </div>
                         <div class="art-cont">
@@ -60,42 +80,47 @@
                         </div>
                     </div>
                     <div class="right-bar">
-                        <div class="search">
-                            <form action="/search" method="get">
-                                <input type="search" name="q" id="rb_squery" placeholder="検索..."><br>
-                                <input type="submit" value="検索"><input type="submit" formaction="/a-search" class="advanced-search" value="詳細検索＋">
-                            </form>
-                        </div>
-                        <div class="ad-space-square">
-                            <span>Ad-Space</span>
-                        </div>
-                        <div class="new-articles articles">
-                            <article class="list">
-                                <span class="list-title">新着記事</span>
-                                <hr>
-                                <article>
-                                    <a href="/articles/001">
-                                        <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="" class="al-thumb">
-                                        <span class="al-title">
+                        <span class="rb_sp_btn" onclick="toggleClassDelayWithClosingClass($(this).parent(), 'sp_open', 'sp_closing', 1000)">
+                            メニューバーを開く
+                        </span>
+                        <div class="rb_cont">
+                            <div class="search">
+                                <form action="/search" method="get">
+                                    <input type="search" name="q" id="rb_squery" placeholder="検索..."><br>
+                                    <input type="submit" value="検索"><input type="submit" formaction="/a-search" class="advanced-search" value="詳細検索＋">
+                                </form>
+                            </div>
+                            <div class="ad-space-square">
+                                <span>Ad-Space</span>
+                            </div>
+                            <div class="new-articles articles">
+                                <article class="list">
+                                    <span class="list-title">新着記事</span>
+                                    <hr>
+                                    <article>
+                                        <a href="/articles/001">
+                                            <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="" class="al-thumb">
+                                            <span class="al-title">
                                             【初めてのブログ】HelloWorld!!
                                         </span>
-                                    </a>
+                                        </a>
+                                    </article>
                                 </article>
-                            </article>
-                        </div>
-                        <div class="ranking-articles articles">
-                            <article class="list">
-                                <span class="list-title">人気記事</span>
-                                <hr>
-                                <article>
-                                    <a href="/articles/001">
-                                        <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="" class="al-thumb">
-                                        <span class="ar-title">
+                            </div>
+                            <div class="ranking-articles articles">
+                                <article class="list">
+                                    <span class="list-title">人気記事</span>
+                                    <hr>
+                                    <article>
+                                        <a href="/articles/001">
+                                            <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="" class="al-thumb">
+                                            <span class="al-title">
                                             【初めてのブログ】HelloWorld!!
                                         </span>
-                                    </a>
+                                        </a>
+                                    </article>
                                 </article>
-                            </article>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,7 +144,7 @@
                     <a href="/terms">サイト規約</a>
                 </li>
                 <li>
-                    <a href="https://www.mfmii.work/contact?s=blog">お問い合わせ<span class="newtab"></a>
+                    <a href="https://www.mfmii.work/contact?s=blog">お問い合わせ<span class="newtab"></span></a>
                 </li>
                 <li>
                     <a href="https://www.mfmii.work/" target="_blank" class="newtab">ホームページ<span class="newtab"></span></a>
