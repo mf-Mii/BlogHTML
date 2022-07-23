@@ -11,7 +11,8 @@
   .container {
     width: 90%;
     min-width: 300px;
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
+    padding-bottom: 50px;
 
     // カテゴリのフォルダ階層表示
     .cat_dir {

@@ -18,8 +18,8 @@ span.br {
   display: block;
   height: 50px;
   text-align: center;
-  background-size: contain;
   background: url("/assets/img/logo.png") no-repeat center;
+  background-size: contain;
 }
 .content header nav {
   height: 70px;
@@ -43,7 +43,7 @@ span.br {
   line-height: 50px;
   height: 50px;
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0 20px;
   color: #242424;
   background: none;
   font-size: 20px;
@@ -52,14 +52,48 @@ span.br {
   vertical-align: middle;
 }
 .content header ul li a:hover {
-  background: #acacac;
-  color: #fff;
+  transform: scale(1.02);
+  background: rgba(172, 172, 172, 0.11);
+  color: #000;
 }
 .content footer {
   text-align: center;
+  border-top: 1px solid #999;
+  box-shadow: 0 0 3px #bbb;
+  min-height: 100px;
 }
 .content footer span.copyright {
   font-size: 13px;
+  vertical-align: bottom;
+}
+.content footer ul.ft_links {
+  margin: 10px auto;
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.content footer ul.ft_links li {
+  border-bottom: 1px solid #414141;
+  margin: 0 10px;
+}
+.content footer ul.ft_links li a {
+  color: #3f3f3f;
+  text-decoration: none;
+}
+.content footer ul.ft_links li a:before {
+  content: ">";
+  display: inline;
+}
+.content footer ul.ft_links li a span.newtab::before {
+  content: "\e89e";
+  font-family: "Material Icons Outlined";
+  position: relative;
+  top: 2px;
 }
 
 /*# sourceMappingURL=common.css.map */
