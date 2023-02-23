@@ -25,10 +25,15 @@
     <link rel="stylesheet" href="/assets/css/right-bar.css">
     <link rel="stylesheet" href="/assets/css/article.css">
     <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/right-bar.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/article.js"></script>
 </head>
 <body>
-    <div class="loading">
-
+    <div class="loading_screen">
+        <div>
+            <img src="http://localhost:3002/common/loading.png">
+        </div>
     </div>
     <div class="content">
         <header>
@@ -44,21 +49,25 @@
             <div class="h_blank"></div>
             <div class="container">
                 <div class="cat_dir">
-                    <a href="/category/" class="cat_root">カテゴリー</a> / <a href="/category/programming/">プログラミング</a> / <a href="/category/programming/web">Web</a>
+                    <a href="/category/" class="cat_root">カテゴリー</a>
+                    <!--
+                    / <a href="/category/programming/">プログラミング</a> / <a href="/category/programming/web">Web</a>
+                    -->
                 </div>
                 <div class="main">
                     <div class="article">
-                        <span class="art-title">
+                        <span class="article-title">
                             <!-- #EDIT:TITLE -->
                             <span class="br">【初めてのブログ】</span>
                             HelloWorld!!
                         </span>
-                        <div class="art-thumb">
-                            <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="">
-                            <span class="art-thumb-info">From:&nbsp;<a href="https://piapro.jp/t/iVDd" target="_blank">piapro</a></span>
+                        <div class="article-thumb">
+                            <img src="http://localhost:3002/common/loading.png" alt="">
+                            <span class="article-thumb-info">From:&nbsp;<a href="https://piapro.jp/t/iVDd" target="_blank">piapro</a></span>
                         </div>
-                        <div class="art-info">
+                        <div class="article-info">
                             <div class="tags">
+                                <!--
                                 <a href="/tags/html" class="tag">
                                     HTML
                                 </a>
@@ -66,15 +75,16 @@
                                     ShortyTag
                                 </span>
                                 <span class="tag">
-                                    LONGLONGLONG----TAG
+                                    LONGLONGLONGLONGLONGLONGLONGTAG
                                 </span>
                                 <span class="tag">
                                     AAAAAAABBBBBBBCCCCCCC
                                 </span>
+                                -->
                             </div>
                             <div class="update">2021/10/10</div>
                         </div>
-                        <div class="art-cont">
+                        <div class="article-cont">
                             <h2>HelloWorld!!</h2>
                             ということで皆さんはじめまして、mf_Miiと申します！
                         </div>
@@ -86,8 +96,10 @@
                         <div class="rb_cont">
                             <div class="search">
                                 <form action="/search" method="get">
-                                    <input type="search" name="q" id="rb_squery" placeholder="検索..."><br>
-                                    <input type="submit" value="検索"><input type="submit" formaction="/a-search" class="advanced-search" value="詳細検索＋">
+                                    <input type="search" name="q" id="rb_search_query" placeholder="検索..." tabindex="0"><br>
+                                    <label for="rb_search_button" class="btn1 ico_search button" tabindex="1">検索 </label>
+                                    <input type="submit" value="検索" id="rb_search_button" hidden>
+                                    <input type="submit" formaction="/advanced-search" class="advanced-search" value="詳細検索＋">
                                 </form>
                             </div>
                             <div class="ad-space-square">
@@ -101,8 +113,8 @@
                                         <a href="/articles/001">
                                             <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="" class="al-thumb">
                                             <span class="al-title">
-                                            【初めてのブログ】HelloWorld!!
-                                        </span>
+                                                【初めてのブログ】HelloWorld!!
+                                            </span>
                                         </a>
                                     </article>
                                 </article>
@@ -115,8 +127,8 @@
                                         <a href="/articles/001">
                                             <img src="/assets/img/ボカロに見る危機対処法_jvmppr_202110132346.jpg" alt="" class="al-thumb">
                                             <span class="al-title">
-                                            【初めてのブログ】HelloWorld!!
-                                        </span>
+                                                【初めてのブログ】HelloWorld!!
+                                            </span>
                                         </a>
                                     </article>
                                 </article>
@@ -144,16 +156,51 @@
                     <a href="/terms">サイト規約</a>
                 </li>
                 <li>
-                    <a href="https://www.mfmii.work/contact?s=blog">お問い合わせ<span class="newtab"></span></a>
+                    <a href="https://www.mfmii.work/contact?s=blog" target="_blank" class="newtab">お問い合わせ</a>
                 </li>
                 <li>
-                    <a href="https://www.mfmii.work/" target="_blank" class="newtab">ホームページ<span class="newtab"></span></a>
+                    <a href="https://www.mfmii.work/" target="_blank" class="newtab">ホームページ</a>
                 </li>
             </ul>
             <span class="copyright">
-                ©2022 mf_Mii
+                ©2023 mf_Mii
             </span>
         </footer>
     </div>
+<script>
+    //Remove .html
+    if (window.location.href.endsWith('.html') && WEBSITE_ENV.MODE === 'product')
+        location.href = location.href.split('.').slice(0, -5).join('.');
+    //Get Article Info
+    const LoadingStartTime = performance.now();
+    $(window).on('load', () => {
+        const articleFetchResult = Article.getArticleByName(location.href.split('/').pop());
+        articleFetchResult.then((data) => {
+            if (data.result === 'success') {
+                const article = data.article;
+                //タイトル
+                $('.article-title').text(article.getTitle());
+                //カテゴリ
+                for (let i = 0; i < article.getCategory().length; i++) {
+                    $('.cat_dir').append(`&nbsp;/&nbsp;<a href="/category/${article.getCategory().slice(0, i+1).join('/')}">${article.getCategory()[i]}</a>`);
+                }
+                //タグ
+                article.getTags().forEach((tag) => {
+                    $('.article-info .tags').append(`<a class="tag" href="/tags/${tag}">${tag}</a>`);
+                });
+                //更新日時
+                $('.article-info .update').text(`${article.getUpdated().getFullYear()}/${('00'+(article.getUpdated().getMonth()+1)).slice(-2)}/${('00'+article.getUpdated().getDate()).slice(-2)}`);
+
+                //読み込み画面の削除
+                if (performance.now() - LoadingStartTime > 100)
+                    $('.loading_screen').fadeOut(500);
+                else
+                    $('.loading_screen').hide();
+            }
+        })
+        //OnLoadAction
+        displayNewArticles();
+    });
+</script>
 </body>
 </html>

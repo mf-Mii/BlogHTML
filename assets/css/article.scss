@@ -59,7 +59,7 @@ $SP_WIDTH: 512px;
         }
 
 
-        span.art-title {
+        span.article-title {
           font-size: 32px;
           background: linear-gradient(transparent, transparent, #70ffec);
           display: block;
@@ -67,17 +67,22 @@ $SP_WIDTH: 512px;
         }
 
         // サムネイル画像
-        .art-thumb {
+        .article-thumb {
           width: 100%;
           margin-top: 40px;
           display: block;
-          img {
+          img:not(.loaded) {
+            display: block;
+            margin: 0 auto;
+            padding: calc(100% * 9 / 16 / 2) 0;
+          }
+          img.loaded {
             display: block;
             width: 100%;
           }
         }
         // サムネイル画像の情報(引用元)
-        .art-thumb-info {
+        .article-thumb-info {
           display: block;
           float: right;
           font-size: small;
@@ -91,11 +96,12 @@ $SP_WIDTH: 512px;
           }
         }
         // 記事の詳細情報
-        div.art-info {
+        div.article-info {
           margin: 20px 20px;
           color: #3f3f3f;
           font-size: 0;
           display: flex;
+          justify-content: space-between;
           @media screen and (max-width: $SP_WIDTH){
             flex-flow: column;
             margin: 20px 0;
@@ -133,6 +139,7 @@ $SP_WIDTH: 512px;
             display: inline-block;
             font-size: 16px;
             order: 2;
+            text-align: right;
             @media screen and (max-width: $SP_WIDTH) {
               display: block;
               width: 100%;
@@ -149,7 +156,7 @@ $SP_WIDTH: 512px;
             }
           }
         }
-        div.art-cont {
+        div.article-cont {
 
         }
       }

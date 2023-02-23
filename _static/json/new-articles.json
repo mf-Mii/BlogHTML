@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "last-update": "2022/07/24 04:53:20",
+  "articles": [
+    {
+      "id": 1,
+      "name": "hello-world",
+      "title": "【初めてのブログ】HelloWorld!!",
+      "category": "programming/web",
+      "tags": [
+        "html",
+        "blog"
+      ],
+      "thumb": "59197768-baa9-4176-964a-aea8be7f22a2.thumb.webp",
+      "update": "2021/10/10"
+    }
+  ]
+}

@@ -18,3 +18,9 @@ const toggleClassDelayWithClosingClass = (elem, className, closingClassName, del
     }
     else $(elem).addClass(className)
 }
+
+const WEBSITE_ENV = {
+    MODE: 'develop',//product or develop
+    API_ARTICLE: this.MODE === 'product' ? 'https://blog-api.mfmii.work' : 'http://localhost:3000',
+    API_ANALYTICS: this.MODE === 'product' ? 'https://blog-analytics.mfmii.work' : 'http://localhost:3001'
+}

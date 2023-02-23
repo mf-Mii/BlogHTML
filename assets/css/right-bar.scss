@@ -56,38 +56,52 @@ $SP_WIDTH: 512px;
     .search {
       width: 80%;
       margin: auto;
-      padding: 15px 0px;
-      border-bottom: 1px solid #3d3d3d;
+      padding: 15px 0;
 
-      form input {
-        &#rb_squery {
+      form input,label {
+        &#rb_search_query {
           padding: 10px 15px;
           border-radius: 8px;
           font-size: 17px;
           margin: 20px auto;
-          border: 1px solid #717171;
+          //border: 1px solid #717171;
+          border: none;
           width: 100%;
           outline: none;
           transition: .3s;
 
           &:focus {
-            border: 1px solid #333333;
+            //border: 1px solid #333333;
+            border: none;
             box-shadow: 0 0 10px #8887;
           }
         }
 
-        &[type="submit"] {
-          color: #242424;
-          font-size: 18px;
+        &.button,&[type="submit"] {
+          color: #fff;
+          font-size: 16px;
           margin-left: 20px;
-          background: none;
+          background: #1b87dc;
+          //border: 2px solid #53b3ff;
           border: none;
-          text-decoration: underline;
+          border-radius: 5px;
+          padding: 5px 14px;
           transition-duration: 300ms;
           cursor: pointer;
 
           &:hover {
-            color: #696969;
+            filter: brightness(1.1);
+          }
+          &:focus {
+            box-shadow: 0 0 0 3px rgba(83, 179, 255, 0.5);
+          }
+
+          &.ico_search::after {
+            content: '\e8b6';
+            font-family: 'Material Icons Outlined';
+            display: inline-block;
+            transform: translateY(3px);
+            scale: 1.2;
           }
         }
       }
@@ -98,6 +112,7 @@ $SP_WIDTH: 512px;
       margin: auto;
       min-height: 100px;
       text-align: center;
+      border-top: 1px solid #3d3d3d;
       border-bottom: 1px solid #3d3d3d;
     }
 
@@ -138,10 +153,12 @@ $SP_WIDTH: 512px;
 
           &:hover {
             filter: brightness(1.1);
-
+/*
             + span.al-title {
               color: #858585;
             }
+
+ */
           }
         }
       }

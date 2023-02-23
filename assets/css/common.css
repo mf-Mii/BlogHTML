@@ -3,6 +3,26 @@ span.br {
   display: inline-block;
 }
 
+a:active {
+  color: #25c2fa !important;
+}
+
+.loading_screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999998;
+  background: #fff;
+}
+.loading_screen div {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+}
+
 .content {
   width: 100%;
 }
@@ -25,7 +45,7 @@ span.br {
   height: 70px;
   display: block;
 }
-.content header ul {
+.content header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -34,27 +54,27 @@ span.br {
   height: 100%;
   text-align: center;
 }
-.content header ul li {
+.content header nav ul li {
   line-height: 70px;
   height: 70px;
   display: inline-block;
 }
-.content header ul li a {
+.content header nav ul li a {
   line-height: 50px;
   height: 50px;
   display: inline-block;
   padding: 0 20px;
-  color: #242424;
+  color: #242424 !important;
   background: none;
   font-size: 20px;
   text-decoration: transparent;
   transition-duration: 300ms;
   vertical-align: middle;
+  border: none;
 }
-.content header ul li a:hover {
-  transform: scale(1.02);
-  background: rgba(172, 172, 172, 0.11);
-  color: #000;
+.content header nav ul li a:hover {
+  background: #666;
+  color: #ddd !important;
 }
 .content footer {
   text-align: center;
@@ -79,18 +99,26 @@ span.br {
   justify-content: center;
 }
 .content footer ul.ft_links li {
-  border-bottom: 1px solid #414141;
   margin: 5px 10px;
+  box-shadow: 0 10px 0px -8px #666;
+  transition-duration: 300ms;
+}
+.content footer ul.ft_links li:hover {
+  filter: drop-shadow(0px 7px 3px #000);
+  box-shadow: 0 10px 10px -8px #444;
+  scale: 1.1;
 }
 .content footer ul.ft_links li a {
   color: #3f3f3f;
   text-decoration: none;
+  /*
+  &:before {
+    content: ">";
+    display: inline;
+  }
+   */
 }
-.content footer ul.ft_links li a:before {
-  content: ">";
-  display: inline;
-}
-.content footer ul.ft_links li a span.newtab::before {
+.content footer ul.ft_links li a.newtab::after {
   content: "\e89e";
   font-family: "Material Icons Outlined";
   position: relative;

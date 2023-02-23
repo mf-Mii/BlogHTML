@@ -55,41 +55,52 @@
 .content main .container div.main .right-bar .rb_cont .search {
   width: 80%;
   margin: auto;
-  padding: 15px 0px;
-  border-bottom: 1px solid #3d3d3d;
+  padding: 15px 0;
 }
-.content main .container div.main .right-bar .rb_cont .search form input#rb_squery {
+.content main .container div.main .right-bar .rb_cont .search form input#rb_search_query, .content main .container div.main .right-bar .rb_cont .search label#rb_search_query {
   padding: 10px 15px;
   border-radius: 8px;
   font-size: 17px;
   margin: 20px auto;
-  border: 1px solid #717171;
+  border: none;
   width: 100%;
   outline: none;
   transition: 0.3s;
 }
-.content main .container div.main .right-bar .rb_cont .search form input#rb_squery:focus {
-  border: 1px solid #333333;
+.content main .container div.main .right-bar .rb_cont .search form input#rb_search_query:focus, .content main .container div.main .right-bar .rb_cont .search label#rb_search_query:focus {
+  border: none;
   box-shadow: 0 0 10px rgba(136, 136, 136, 0.4666666667);
 }
-.content main .container div.main .right-bar .rb_cont .search form input[type=submit] {
-  color: #242424;
-  font-size: 18px;
+.content main .container div.main .right-bar .rb_cont .search form input.button, .content main .container div.main .right-bar .rb_cont .search form input[type=submit], .content main .container div.main .right-bar .rb_cont .search label.button, .content main .container div.main .right-bar .rb_cont .search label[type=submit] {
+  color: #fff;
+  font-size: 16px;
   margin-left: 20px;
-  background: none;
+  background: #1b87dc;
   border: none;
-  text-decoration: underline;
+  border-radius: 5px;
+  padding: 5px 14px;
   transition-duration: 300ms;
   cursor: pointer;
 }
-.content main .container div.main .right-bar .rb_cont .search form input[type=submit]:hover {
-  color: #696969;
+.content main .container div.main .right-bar .rb_cont .search form input.button:hover, .content main .container div.main .right-bar .rb_cont .search form input[type=submit]:hover, .content main .container div.main .right-bar .rb_cont .search label.button:hover, .content main .container div.main .right-bar .rb_cont .search label[type=submit]:hover {
+  filter: brightness(1.1);
+}
+.content main .container div.main .right-bar .rb_cont .search form input.button:focus, .content main .container div.main .right-bar .rb_cont .search form input[type=submit]:focus, .content main .container div.main .right-bar .rb_cont .search label.button:focus, .content main .container div.main .right-bar .rb_cont .search label[type=submit]:focus {
+  box-shadow: 0 0 0 3px rgba(83, 179, 255, 0.5);
+}
+.content main .container div.main .right-bar .rb_cont .search form input.button.ico_search::after, .content main .container div.main .right-bar .rb_cont .search form input[type=submit].ico_search::after, .content main .container div.main .right-bar .rb_cont .search label.button.ico_search::after, .content main .container div.main .right-bar .rb_cont .search label[type=submit].ico_search::after {
+  content: "\e8b6";
+  font-family: "Material Icons Outlined";
+  display: inline-block;
+  transform: translateY(3px);
+  scale: 1.2;
 }
 .content main .container div.main .right-bar .rb_cont .ad-space-square {
   width: 90%;
   margin: auto;
   min-height: 100px;
   text-align: center;
+  border-top: 1px solid #3d3d3d;
   border-bottom: 1px solid #3d3d3d;
 }
 .content main .container div.main .right-bar .rb_cont .articles {
@@ -126,9 +137,12 @@
 }
 .content main .container div.main .right-bar .rb_cont .articles article.list article:not(article.list):hover {
   filter: brightness(1.1);
-}
-.content main .container div.main .right-bar .rb_cont .articles article.list article:not(article.list):hover + span.al-title {
-  color: #858585;
+  /*
+              + span.al-title {
+                color: #858585;
+              }
+
+   */
 }
 .content main .container div.main .right-bar .rb_cont .articles.new-articles article.list span.list-title::before {
   content: "\e031";

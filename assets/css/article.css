@@ -57,86 +57,93 @@
     order: 2;
   }
 }
-.content main .container div.main .article span.art-title {
+.content main .container div.main .article span.article-title {
   font-size: 32px;
   background: linear-gradient(transparent, transparent, #70ffec);
   display: block;
   overflow-x: clip;
 }
-.content main .container div.main .article .art-thumb {
+.content main .container div.main .article .article-thumb {
   width: 100%;
   margin-top: 40px;
   display: block;
 }
-.content main .container div.main .article .art-thumb img {
+.content main .container div.main .article .article-thumb img:not(.loaded) {
+  display: block;
+  margin: 0 auto;
+  padding: 28.125% 0;
+}
+.content main .container div.main .article .article-thumb img.loaded {
   display: block;
   width: 100%;
 }
-.content main .container div.main .article .art-thumb-info {
+.content main .container div.main .article .article-thumb-info {
   display: block;
   float: right;
   font-size: small;
   color: #666666;
 }
-.content main .container div.main .article .art-thumb-info a {
+.content main .container div.main .article .article-thumb-info a {
   display: block;
   float: right;
   font-size: small;
   color: #666666;
 }
-.content main .container div.main .article div.art-info {
+.content main .container div.main .article div.article-info {
   margin: 20px 20px;
   color: #3f3f3f;
   font-size: 0;
   display: flex;
+  justify-content: space-between;
 }
 @media screen and (max-width: 512px) {
-  .content main .container div.main .article div.art-info {
+  .content main .container div.main .article div.article-info {
     flex-flow: column;
     margin: 20px 0;
   }
 }
-.content main .container div.main .article div.art-info .tags {
+.content main .container div.main .article div.article-info .tags {
   max-width: fit-content;
   width: calc(100% - 120px);
   font-size: 16px;
   order: 1;
 }
 @media screen and (max-width: 512px) {
-  .content main .container div.main .article div.art-info .tags {
+  .content main .container div.main .article div.article-info .tags {
     display: block;
     width: 100%;
     order: 2;
   }
 }
-.content main .container div.main .article div.art-info .tags .tag {
+.content main .container div.main .article div.article-info .tags .tag {
   display: inline-block;
   color: #414141;
   margin-right: 10px;
 }
-.content main .container div.main .article div.art-info .tags .tag::before {
+.content main .container div.main .article div.article-info .tags .tag::before {
   content: "\e54e";
   font-family: "Material Icons Outlined";
   display: inline-block;
   font-size: 20px;
   transform: translateY(3px);
 }
-.content main .container div.main .article div.art-info .update {
+.content main .container div.main .article div.article-info .update {
   width: 120px;
   vertical-align: top;
   display: inline-block;
   font-size: 16px;
   order: 2;
+  text-align: right;
 }
 @media screen and (max-width: 512px) {
-  .content main .container div.main .article div.art-info .update {
+  .content main .container div.main .article div.article-info .update {
     display: block;
     width: 100%;
     float: left;
     order: 1;
   }
 }
-.content main .container div.main .article div.art-info .update::before {
+.content main .container div.main .article div.article-info .update::before {
   content: "\e923";
   font-family: "Material Icons Outlined";
   display: inline-block;
